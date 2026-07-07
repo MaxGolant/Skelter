@@ -10,8 +10,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 # --- CONFIGURATION --- 
 API_KEY = "API_KEY_HERE"
-
-# The new library uses a 'Client' object instead of 'configure'
 client = genai.Client(api_key=API_KEY)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
