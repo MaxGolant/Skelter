@@ -5,12 +5,11 @@ import time
 import PIL.Image
 import warnings
 
-# NOTE IT MIGHT STILL BE VERY BUGGY
 # --- INITIALIZATION ---
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 # --- CONFIGURATION --- 
-API_KEY = "Api key here" 
+API_KEY = "API_KEY_HERE"
 
 # The new library uses a 'Client' object instead of 'configure'
 client = genai.Client(api_key=API_KEY)
