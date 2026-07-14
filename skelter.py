@@ -82,11 +82,11 @@ def start_skelter():
     if mode_choice == "2":
         active_tools = web_tools
         mode_name = "WEB MODE (Search Enabled)"
-        sys_instruct = f"You are Skelter in WEB MODE. Use Google Search for facts. Memory: {memory_context}"
+        sys_instruct = f"You are Skelter in WEB MODE. Use Google Search for facts. USE YOUR MEMORY: {memory_context}"
     else:
         active_tools = os_tools
         mode_name = "OS MODE (File Access Enabled)"
-        sys_instruct = f"You are Skelter in OS MODE. Manage the MG-OS files. Memory: {memory_context}"
+        sys_instruct = f"You are Skelter in OS MODE. Manage the MG-OS files. USE YOUR MEMORY: {memory_context}"
 
     # 3. CREATE THE CHAT WITH THE SELECTED TOOLS
     try:
@@ -132,6 +132,10 @@ def start_skelter():
         
         if user_input.lower() in ['exit', 'quit']:
             print("\n[SYSTEM] Going offline..."); break
+
+        f user_input.lower() == 'reset':
+            os.system('cls')
+            return start_skelter()
             
         try:
             # Automated Vision Detection (Works in BOTH modes)
